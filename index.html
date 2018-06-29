@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        
+            /* 
+             * Example of a "widget" that contains our table 
+             * I'm imagining a dashboard made up of lots of these "tiles"
+             */
+            .small-widget-box {
+                padding: 5px;
+                width: 600px;
+                height: 400px;
+                resize: both;
+                overflow: auto;
+                
+                border: 4px solid black;
+                border-radius: 5px;
+            }
+            
+            .table-grid {
+                display: grid;
+                grid-template-columns: repeat(10, minmax(75px, auto));
+                grid-template-rows: repeat(3, minmax(auto, 75px));
+                overflow: auto;
+                
+                max-height: 100%;
+                max-width: 100%;
+            }
+            
+            .table-grid div {
+                border: 1px solid #333;
+                z-index: 0;
+            }
+            
+            .table-grid div.fixedToTop {
+                /* Uncomment these if you want to freeze the first row */
+                /* position: sticky; */
+                /* top: 0; */
+                
+                z-index: 10;
+            }
+            
+            .table-grid div.fixedToLeft {
+                /* Uncomment these if you want to freeze the first column */
+                /* position: sticky; */
+                /* left: 0; */
+                
+                z-index: 10;
+            }
+            
+            .table-grid div.fixedToBoth {
+                /* Uncomment this if you want to freeze the first row or column */
+                /* position: sticky; */
+                
+                /* Uncomment these if you want to freeze the first column */
+                /* left: 0; */
+                
+                top: 0;
+                z-index: 20;
+            }
+            
+            .table-grid .header {
+                background-color: rgb(220,220,220);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="small-widget-box">
+            <div class="table-grid">  
+                <div class="header fixedToBoth">Column 1, row 1</div>
+                <div class="header fixedToTop">Column 2, row 1</div>
+                <div class="header fixedToTop">Column 3, row 1</div>
+                <div class="header fixedToTop">Column 4, row 1</div>
+                <div class="header fixedToTop">Column 5, row 1</div>
+                <div class="header fixedToTop">Column 6, row 1</div>
+                <div class="header fixedToTop">Column 7, row 1</div>
+                <div class="header fixedToTop">Column 8, row 1</div>
+                <div class="header fixedToTop">Column 9, row 1</div>
+                <div class="header fixedToTop">Column 10, row 1</div>
+                
+                <div class="header fixedToLeft">Column 1, row 2</div>
+                <div class="body">Column 2, row 2</div>
+                <div class="body">Column 3, row 2</div>
+                <div class="body">Column 4, row 2</div>
+                <div class="body">Column 5, row 2</div>
+                <div class="body">Column 6, row 2</div>
+                <div class="body">Column 7, row 2</div>
+                <div class="body">Column 8, row 2</div>
+                <div class="body">Column 9, row 2</div>
+                <div class="body">Column 10, row 2</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+                
+                <div class="header fixedToLeft">Column 1, row 3</div>
+                <div class="body">Column 2, row 3</div>
+                <div class="body">Column 3, row 3</div>
+                <div class="body">Column 4, row 3</div>
+                <div class="body">Column 5, row 3</div>
+                <div class="body">Column 6, row 3</div>
+                <div class="body">Column 7, row 3</div>
+                <div class="body">Column 8, row 3</div>
+                <div class="body">Column 9, row 3</div>
+                <div class="body">Column 10, row 3</div>
+            </div>
+        </div>
+    </body>
+</html>
